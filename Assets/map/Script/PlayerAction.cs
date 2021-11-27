@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//플레이어가 건물 앞, 뒤로 유연하게 움직이기
+//바다에는 나가지 못하게 + 화면 밖으로 탈출하지 못하게
+
 public class PlayerAction : MonoBehaviour
 {
     public float Speed;
     public TextManager  manager;
 
     Rigidbody2D rigid;
+    Animator animator;
     float h; //수평
     float v; //상하
     bool isHorizonMove; //수평이동중
@@ -17,6 +21,7 @@ public class PlayerAction : MonoBehaviour
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -46,6 +51,12 @@ public class PlayerAction : MonoBehaviour
         //Scan_Ray
         if(Input.GetButtonDown("Jump") && scanPlace != null)
             manager.Action(scanPlace);
+        
+        //play animaition
+        if(h != 0 || v != 0)
+            this.animator.speed = 1;
+        else
+            this.animator.speed = 0;    
     }
 
     void FixedUpdate()
@@ -57,7 +68,6 @@ public class PlayerAction : MonoBehaviour
         //Ray
         Debug.DrawRay(rigid.position, dirVec * 0.7f, new Color(0, 1, 0));
         RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, 0.7f, LayerMask.GetMask("Place"));
-
         if(rayHit.collider != null){
             scanPlace = rayHit.collider.gameObject;
         }

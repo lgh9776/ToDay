@@ -7,15 +7,11 @@ public class TextManager : MonoBehaviour
 {
     public TalkManager talkManager;
     public GameObject talkPanel;
+    public Image backgroundImg;
     public Text talkText;
     public GameObject scanObject;
     public bool isAction;
     public int talkIndex;
-
-    /*void Awake()
-    {
-        talkPanel.SetActive(false);
-    }*/
 
     public void Action(GameObject scanObj)
     {
@@ -37,6 +33,9 @@ public class TextManager : MonoBehaviour
         }
 
         talkText.text = talkData;
+
+        backgroundImg.sprite = talkManager.GetBackground(id);
+        backgroundImg.color = new Color(1, 1, 1, 1);
         isAction = true;
         talkIndex++;
     }

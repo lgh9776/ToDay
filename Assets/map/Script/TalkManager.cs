@@ -5,10 +5,13 @@ using UnityEngine;
 public class TalkManager : MonoBehaviour
 {
     Dictionary<int, string[]> talkData;
+    Dictionary<int, Sprite> backgroundData;
+    public Sprite[] backPlace;
 
     void Awake()
     {
         talkData = new Dictionary<int, string[]>();
+        backgroundData = new Dictionary<int, Sprite>();
         GenerateData();
     }
 
@@ -22,6 +25,15 @@ public class TalkManager : MonoBehaviour
         talkData.Add(5, new string[] {"[자전거를 타고 가는 중 횡단보도 신호가 바뀌었다.]", "00님 이 횡단보도를 건너야 해요!"});
         talkData.Add(6, new string[] {"[학교 갈 준비하는 상황]", "00님 내일 준비물을 챙겨가야 하는데 언제 준비하면 될까요?"});
         talkData.Add(7, new string[] {"[오랜만에 긴 연휴로 바다에 가기로 한 00과 (펫이름)]", "태어나서 바다는 처음 보러 가는데 정말 기대돼요! 보통 바다에 가면 무엇을 하나요?"});
+
+        backgroundData.Add(0, backPlace[0]);
+        backgroundData.Add(1, backPlace[1]);
+        backgroundData.Add(2, backPlace[2]);
+        backgroundData.Add(3, backPlace[3]);
+        backgroundData.Add(4, backPlace[4]);
+        backgroundData.Add(5, backPlace[5]);
+        backgroundData.Add(6, backPlace[6]);
+        backgroundData.Add(7, backPlace[7]);
     }
 
     public string GetTalk(int id, int talkIndex)
@@ -30,5 +42,10 @@ public class TalkManager : MonoBehaviour
             return null;
         else
             return talkData[id][talkIndex];
+    }
+
+    public Sprite GetBackground(int id)
+    {
+        return backgroundData[id];
     }
 }
