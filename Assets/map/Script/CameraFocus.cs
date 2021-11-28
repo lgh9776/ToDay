@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraFocus : MonoBehaviour
 {
     GameObject player;
+
     void Start()
     {
         this.player = GameObject.Find("player");
@@ -13,7 +14,19 @@ public class CameraFocus : MonoBehaviour
     void Update()
     {
         Vector3 playerPos = this.player.transform.position;
-        transform.position = new Vector3(playerPos.x, playerPos.y, transform.position.z);
+
+        if(playerPos.y <= -3 || playerPos.y >= 3){
+            if(playerPos.x <= -7.5 || playerPos.x >= 8.5)
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            else
+                transform.position = new Vector3(playerPos.x, transform.position.y, transform.position.z);
+        }
+        else if(playerPos.x <= -7.5 || playerPos.x >= 8.5){
+            transform.position = new Vector3(transform.position.x, playerPos.y, transform.position.z);
+        }
+        else{
+            transform.position = new Vector3(playerPos.x, playerPos.y, transform.position.z);
+        }
     }
-} //플레이어 x좌표로 따라다님 -> 화면 밖이 나오지 않도록 이동 제한
+}
 

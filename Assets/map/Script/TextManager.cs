@@ -33,7 +33,6 @@ public class TextManager : MonoBehaviour
         }
 
         talkText.text = talkData;
-
         backgroundImg.sprite = talkManager.GetBackground(id);
         backgroundImg.color = new Color(1, 1, 1, 1);
         isAction = true;

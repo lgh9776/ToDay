@@ -41,6 +41,8 @@
      <Compile Include="Assets\map\Script\ObjectData.cs" />
      <Compile Include="Assets\map\Script\PlayerAction.cs" />
      <Compile Include="Assets\map\Script\TextManager.cs" />
+     <Compile Include="Assets\map\Script\SoundManager.cs" />
+     <Compile Include="Assets\intro\startManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.22f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

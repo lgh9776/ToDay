@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //플레이어가 건물 앞, 뒤로 유연하게 움직이기
 //바다에는 나가지 못하게 + 화면 밖으로 탈출하지 못하게
@@ -49,8 +50,10 @@ public class PlayerAction : MonoBehaviour
             dirVec = Vector3.right;
 
         //Scan_Ray
-        if(Input.GetButtonDown("Jump") && scanPlace != null)
+        if(Input.GetButtonDown("Jump") && scanPlace != null){
             manager.Action(scanPlace);
+            GetComponent<AudioSource>().Play();
+        }
         
         //play animaition
         if(h != 0 || v != 0)
