@@ -12,8 +12,7 @@ public class DesirabilityGauge : MonoBehaviour
 
 	private int index0 = 0;
 	private int index1 = 0;
-	private int index11 = 0;
-	private int index12 = 0;
+	private int index2 = 0;
 
 	public static int score = 0; // 늘어나는 양
 	private int nowvalue = 0; // 현재 애정도 수치
@@ -29,9 +28,42 @@ public class DesirabilityGauge : MonoBehaviour
 
 		Function();
 
-		index1 = Random.Range(1, 3);
-		index11 = Random.Range(3, 5);
-		index12 = Random.Range(5, 7);
+		if (index0 == 0)
+		{
+			index1 = Random.Range(3, 5);
+			if (index1 == 3)
+            {
+				index2 = Random.Range(9, 11);
+			}
+			else if (index1 == 4)
+			{
+				index2 = Random.Range(11, 13);
+			}
+		}
+		else if (index0 == 1)
+		{
+			index1 = Random.Range(5, 7);
+			if (index1 == 5)
+			{
+				index2 = Random.Range(13, 15);
+			}
+			else if (index1 == 6)
+			{
+				index2 = Random.Range(15, 17);
+			}
+		}
+		else if (index0 == 2)
+		{
+			index1 = Random.Range(7, 9);
+			if (index1 == 7)
+			{
+				index2 = Random.Range(17, 19);
+			}
+			else if (index1 == 8)
+			{
+				index2 = Random.Range(19, 21);
+			}
+		}
 	}
  
 	private void Function()
@@ -51,14 +83,7 @@ public class DesirabilityGauge : MonoBehaviour
 		else if (nowvalue >= 70 && nowvalue < 100)
 		{
 			Debug.Log("2단계로 성장");
-			if (index1 == 1)
-			{
-				RandomObj11();
-			}
-			else if (index1 == 2)
-			{
-				RandomObj12();
-			}
+			RandomObj2();
 		}
 		else if (nowvalue >= 100)
 		{
@@ -90,14 +115,9 @@ public class DesirabilityGauge : MonoBehaviour
 		NextLevel[index0].SetActive(false);
 		NextLevel[index1].SetActive(true);
 	}
-	private void RandomObj11()
+	private void RandomObj2()
 	{
 		NextLevel[index1].SetActive(false);
-		NextLevel[index11].SetActive(true);
-	}
-	private void RandomObj12()
-	{
-		NextLevel[index1].SetActive(false);
-		NextLevel[index12].SetActive(true);
+		NextLevel[index2].SetActive(true);
 	}
 }
