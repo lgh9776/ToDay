@@ -3359,6 +3359,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   date: {fileID: 1696070222}
   sleepbtn: {fileID: 1277705182}
+  MapConversation: 3
+  Interact: 1
 --- !u!1 &900955930
 GameObject:
   m_ObjectHideFlags: 0
@@ -4903,9 +4905,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 891182667}
-        m_TargetAssemblyTypeName: DayScript, Assembly-CSharp
-        m_MethodName: AllDayDone
+      - m_Target: {fileID: 891182664}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ChooseInteract
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4915,9 +4917,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 891182664}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ChooseInteract
+      - m_Target: {fileID: 891182667}
+        m_TargetAssemblyTypeName: DayScript, Assembly-CSharp
+        m_MethodName: OnClickInteract
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5225,7 +5227,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 0.7647059}
+    m_DisabledColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0.7647059}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -7613,18 +7615,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 891182667}
-        m_TargetAssemblyTypeName: DayScript, Assembly-CSharp
-        m_MethodName: NextDay
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
