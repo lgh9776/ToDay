@@ -8,6 +8,9 @@ public class DesirabilityGauge : MonoBehaviour
 	public Text message;
 	public Slider slider;
 
+	public Sprite[] nextlevel;
+	public Image image;
+
 	public static int des;
 	private int nowvalue = 0;
 
@@ -15,6 +18,14 @@ public class DesirabilityGauge : MonoBehaviour
     {
 		Function();
 	}
+
+	private void Funciton_RandomImage()
+	{
+		int index = Random.Range(0, nextlevel.Length);
+		Sprite select = nextlevel[index];
+		image.sprite = select;
+	}
+
 	private void Function()
 	{
 		// 점수 받기
@@ -28,12 +39,14 @@ public class DesirabilityGauge : MonoBehaviour
 
 		if (nowvalue >= 30 && nowvalue < 70)
         {
-			Debug.Log("2단계로 성장");
-
+			Debug.Log("1단계로 성장");
+			Funciton_RandomImage();
+			// 해당캐릭터.SetActive(true)
+			// 기존캐릭터.SetActive(false)
 		}
 		else if (nowvalue >= 70 && nowvalue < 100)
 		{
-			Debug.Log("3단계로 성장");
+			Debug.Log("2단계로 성장");
 		}
 		else if (nowvalue >= 100)
 		{
