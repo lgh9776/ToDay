@@ -26,6 +26,7 @@ public class DesirabilityGauge : MonoBehaviour
 		Debug.Log("현재 애정도:" + nowvalue);
 		message.text = nowvalue.ToString();  // 슬라이더 값 출력
 
+<<<<<<< Updated upstream
 		if (nowvalue >= 30)
         {
 			if (nowvalue >= 70)
@@ -37,6 +38,21 @@ public class DesirabilityGauge : MonoBehaviour
 			}
 
 		}
+=======
+		if (nowvalue >= 30 && nowvalue < 70)
+        {
+			Debug.Log("2단계로 성장");
+
+		}
+		else if (nowvalue >= 70 && nowvalue < 100)
+		{
+			Debug.Log("3단계로 성장");
+		}
+		else if (nowvalue >= 100)
+		{
+			Debug.Log("엔딩");
+		}
+>>>>>>> Stashed changes
 	}
 
 	public void OnClickInterac5()
