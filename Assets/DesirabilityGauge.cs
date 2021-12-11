@@ -8,7 +8,6 @@ public class DesirabilityGauge : MonoBehaviour
 	public Text message;
 	public Slider slider;
 	public GameObject[] NextLevel = new GameObject[7];
-	// NextLevel = GameObject.FindGameObjectsWithTag("Character");
 
 	private int index0 = 0;
 	private int index1 = 0;
