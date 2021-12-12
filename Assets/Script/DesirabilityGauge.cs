@@ -8,6 +8,7 @@ public class DesirabilityGauge : MonoBehaviour
 	public Text message;
 	public Slider slider;
 	public GameObject[] NextLevel = new GameObject[7];
+	public GameObject Endingbtn;
 
 	public static int index0 = 3;
 	private int index1 = 0;
@@ -92,6 +93,11 @@ public class DesirabilityGauge : MonoBehaviour
 		else if (nowvalue >= 100)
 		{
 			Debug.Log("¿£µù");
+			Ending();
+		}
+		else if (nowvalue >= 5)
+        {
+			Ending();
 		}
 	}
 
@@ -123,5 +129,9 @@ public class DesirabilityGauge : MonoBehaviour
 	{
 		NextLevel[index1].SetActive(false);
 		NextLevel[index2].SetActive(true);
+	}
+	private void Ending()
+	{
+		Endingbtn.SetActive(true);
 	}
 }
