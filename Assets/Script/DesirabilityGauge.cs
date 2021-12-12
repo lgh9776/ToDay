@@ -9,7 +9,7 @@ public class DesirabilityGauge : MonoBehaviour
 	public Slider slider;
 	public GameObject[] NextLevel = new GameObject[7];
 
-	private int index0 = 0;
+	public static int index0 = 3;
 	private int index1 = 0;
 	private int index2 = 0;
 
@@ -22,10 +22,12 @@ public class DesirabilityGauge : MonoBehaviour
 		{
 			NextLevel[i].SetActive(false);
 		}
-		index0 = Random.Range(0, 3);
+		
+		if (index0 == 3)
+        {
+			index0 = Random.Range(0, 3);
+		}
 		NextLevel[index0].SetActive(true);
-
-		Function();
 
 		if (index0 == 0)
 		{
@@ -63,6 +65,9 @@ public class DesirabilityGauge : MonoBehaviour
 				index2 = Random.Range(19, 21);
 			}
 		}
+
+
+		Function();
 	}
  
 	private void Function()
