@@ -14,8 +14,8 @@ public class DesirabilityGauge : MonoBehaviour
 	private int index1 = 0;
 	private int index2 = 0;
 
-	public static int score = 0; // ´Ã¾î³ª´Â ¾ç
-	private int nowvalue = 0; // ÇöÀç ¾ÖÁ¤µµ ¼öÄ¡
+	public static int score = 0; // ï¿½Ã¾î³ªï¿½ï¿½ ï¿½ï¿½
+	private int nowvalue = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
 
 	void Start()
     {
@@ -74,49 +74,49 @@ public class DesirabilityGauge : MonoBehaviour
 	private void Function()
 	{
 		nowvalue += score;
-		// ½½¶óÀÌ´õ ¿òÁ÷ÀÌ±â
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½
 		slider.value = nowvalue;
-		// °ª Ãâ·ÂÇÏ±â
-		Debug.Log("ÇöÀç ¾ÖÁ¤µµ:" + nowvalue);
-		message.text = nowvalue.ToString();  // ½½¶óÀÌ´õ °ª Ãâ·Â
+		// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
+		Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:" + nowvalue);
+		message.text = nowvalue.ToString();  // ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 
 		if (nowvalue >= 30 && nowvalue < 70)
         {
-			Debug.Log("1´Ü°è·Î ¼ºÀå");
+			Debug.Log("1ï¿½Ü°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			RandomObj1();
 		}
 		else if (nowvalue >= 70 && nowvalue < 100)
 		{
-			Debug.Log("2´Ü°è·Î ¼ºÀå");
+			Debug.Log("2ï¿½Ü°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			RandomObj2();
 		}
 		else if (nowvalue >= 100)
 		{
-			Debug.Log("¿£µù");
+			Debug.Log("ï¿½ï¿½ï¿½ï¿½");
 			Ending();
 		}
-		else if (nowvalue >= 5)
+		/*else if (nowvalue >= 5)
         {
 			Ending();
-		}
+		}*/
 	}
 
 	public void OnClickInterac5()
 	{
-		score = 5;  // ÀÎÅÍ·º¼Ç Æú´õ Å¬¸¯ÇÏ¸é 5Á¡ ´õÇÏ±â
-		Debug.Log("5¸¸Å­ ¾ÖÁ¤µµ¸¦ ¾ò¾ú´Ù.");
+		score = 5;  // ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ï¸ï¿½ 5ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+		Debug.Log("5ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.");
 		Function();
 	}
 	public void OnClickInterac10()
 	{
-		score = 10;  // ÀÎÅÍ·º¼Ç Æú´õ Å¬¸¯ÇÏ¸é 10Á¡ ´õÇÏ±â
-		Debug.Log("10¸¸Å­ ¾ÖÁ¤µµ¸¦ ¾ò¾ú´Ù.");
+		score = 10;  // ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ï¸ï¿½ 10ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+		Debug.Log("10ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.");
 		Function();
 	}
 	public void OnClickInterac15()
 	{
-		score = 15;  // ÀÎÅÍ·º¼Ç Æú´õ Å¬¸¯ÇÏ¸é 15Á¡ ´õÇÏ±â
-		Debug.Log("15¸¸Å­ ¾ÖÁ¤µµ¸¦ ¾ò¾ú´Ù.");
+		score = 15;  // ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ï¸ï¿½ 15ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+		Debug.Log("15ï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.");
 		Function();
 	}
 

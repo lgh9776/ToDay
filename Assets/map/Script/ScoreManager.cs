@@ -5,6 +5,8 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     Dictionary<int, int[]> score;
+    public MBTIGauage mbtiGauage;
+    public GameManager gameManager;
 
     void Awake()
     {
@@ -15,8 +17,10 @@ public class ScoreManager : MonoBehaviour
     public void ChoiceScore(int id)
     {
         for(int i = 0; i < 8; i++){
+            mbtiGauage.Mbti[i] += score[id][i];
             //메인화면 mbti점수 int형 배열[i] += score[id][i];
         }
+        gameManager.interactnum--;
     }
 
     void GenerateData()

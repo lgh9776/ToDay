@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public AudioSource bgmPlayer;
     public GameObject[] InteractList = new GameObject[9];
 
-    private int interactnum = 0;
+    public int interactnum = 3;
 
     public void Start()
     {

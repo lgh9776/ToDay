@@ -27,8 +27,11 @@ public class TalkManager : MonoBehaviour
     {
         ObjectData objData = scanObj.GetComponent<ObjectData>();
 
-        if(objData.id != 9000)
-            objData.textNum += 10;
+        if(objData.id != 9000){
+            int n = Random.Range(1, 13);
+            objData.textNum = 10;
+            objData.textNum *= n;
+        }
     }
 
     public Sprite GetBackground(int id)

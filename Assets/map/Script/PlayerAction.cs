@@ -12,6 +12,7 @@ public class PlayerAction : MonoBehaviour
     public float Speed;
     public TextManager manager;
     public ChoiceManager choiceManager;
+    public GameManager gameManager;
 
     Rigidbody2D rigid;
     Animator animator;
@@ -57,11 +58,15 @@ public class PlayerAction : MonoBehaviour
 
         //Scan_Ray
         //3회 횟수가 사라지면 인식 못하게 -> count  > 0 
-        if(choiceManager.isAction != true){
+        if(choiceManager.isAction != true && gameManager.interactnum > 0){
             if(Input.GetButtonDown("Jump") && scanPlace != null){
                 manager.Action(scanPlace);
                 GetComponent<AudioSource>().Play();
             }
+        }
+        else if (Input.GetButtonDown("Jump") && scanPlace.name == "home"){
+            manager.Action(scanPlace);
+            GetComponent<AudioSource>().Play();
         }
         
         //play animaition
