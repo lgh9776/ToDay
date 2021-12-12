@@ -13,6 +13,7 @@ public class PlayerAction : MonoBehaviour
     public TextManager manager;
     public ChoiceManager choiceManager;
     public GameManager gameManager;
+    public GameObject home;
 
     Rigidbody2D rigid;
     Animator animator;
@@ -65,6 +66,15 @@ public class PlayerAction : MonoBehaviour
             }
         }
         else if (Input.GetButtonDown("Jump") && scanPlace.name == "home"){
+            ObjectData objData = scanPlace.GetComponent<ObjectData>();
+            objData.textNum = 10;
+            manager.Action(scanPlace);
+            GetComponent<AudioSource>().Play();
+        }
+        else if (Input.GetButtonDown("Jump") && gameManager.interactnum <= 0 && scanPlace.name != "home"){
+            scanPlace = home;
+            ObjectData objData = scanPlace.GetComponent<ObjectData>();
+            objData.textNum = 20;
             manager.Action(scanPlace);
             GetComponent<AudioSource>().Play();
         }

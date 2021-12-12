@@ -9,8 +9,12 @@ public class ObjectData : MonoBehaviour
 
     void Awake()
     {
-        int n = Random.Range(1, 13);
-        textNum = 10;
-        textNum *= n;
+        int n;
+        
+        if(id != 9000){
+            n = Random.Range(1, 13);
+            textNum = 10;
+            textNum *= n;
+        }
     }
 }

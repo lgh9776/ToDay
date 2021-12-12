@@ -23,9 +23,9 @@ public class TextManager : MonoBehaviour
         scanObject = scanObj;
         ObjectData objData = scanObject.GetComponent<ObjectData>();
 
-        if(objData.id == 9000)
+        if(objData.id == 9000 && objData.textNum == 10){
             SceneManager.LoadScene("Main");
-
+        }
         Talk(objData.id, objData.textNum, scanObject);
 
         talkPanel.SetActive(isAction);

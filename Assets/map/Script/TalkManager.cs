@@ -28,7 +28,7 @@ public class TalkManager : MonoBehaviour
         ObjectData objData = scanObj.GetComponent<ObjectData>();
 
         if(objData.id != 9000){
-            int n = Random.Range(1, 13);
+            int n = Random.Range(1, 12);
             objData.textNum = 10;
             objData.textNum *= n;
         }
@@ -42,6 +42,7 @@ public class TalkManager : MonoBehaviour
     void GenerateData()
     {
         talkData.Add(9000 + 10, new string[] {"집으로 갑니다!"});
+        talkData.Add(9000 + 20, new string[] {"집으로 가야할 시간입니다. 집으로 갑니다!"});
 
         //quest Talk
         talkData.Add(1000 + 10, new string[] {"공원에 도착했어요!", "무엇을 할까요?"});

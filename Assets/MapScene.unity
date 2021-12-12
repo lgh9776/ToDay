@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 8000
-  textNum: 0
+  textNum: 10
 --- !u!1 &370376360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 7000
-  textNum: 0
+  textNum: 10
 --- !u!1 &458759785
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,7 +2096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 5000
-  textNum: 0
+  textNum: 10
 --- !u!1 &632653082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,7 +2595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3000
-  textNum: 0
+  textNum: 10
 --- !u!1 &652631059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,7 +3168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 6000
-  textNum: 0
+  textNum: 10
 --- !u!1 &1014617309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,7 +3370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 4000
-  textNum: 0
+  textNum: 10
 --- !u!60 &1038075999
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4138,7 +4138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 9000
-  textNum: 0
+  textNum: 10
 --- !u!1 &1192423724
 GameObject:
   m_ObjectHideFlags: 0
@@ -4532,7 +4532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2000
-  textNum: 0
+  textNum: 10
 --- !u!1 &1486636198
 GameObject:
   m_ObjectHideFlags: 0
@@ -4751,6 +4751,7 @@ MonoBehaviour:
   manager: {fileID: 1801303674}
   choiceManager: {fileID: 1782959216}
   gameManager: {fileID: 5528244399591211831, guid: 16224932efa90e74e9bc7a1f2e6654fd, type: 3}
+  home: {fileID: 1151022403}
 --- !u!95 &1557056673
 Animator:
   serializedVersion: 3
@@ -5847,7 +5848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1000
-  textNum: 0
+  textNum: 10
 --- !u!1 &1912941223
 GameObject:
   m_ObjectHideFlags: 0
