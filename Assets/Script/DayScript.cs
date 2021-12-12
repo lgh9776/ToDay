@@ -8,7 +8,7 @@ public class DayScript : MonoBehaviour
     public Text date;
     public Button sleepbtn;
     private int day = 0;
-    public int MapConversation = 3;
+    public static int MapConversation = 3;
     public int Interact = 1;
 
     void Start()
