@@ -35,6 +35,12 @@ public class DesirabilityGauge : MonoBehaviour
 			EndingCharac[i].SetActive(false);
 		}
 
+		// ChooseCharac();
+
+		index0 = 1;
+		index1 = 5;
+		index2 = 13;
+
 		if (nowvalue < 30)
 		{
 			NextLevel[index0].SetActive(true);
@@ -47,7 +53,7 @@ public class DesirabilityGauge : MonoBehaviour
 		{
 			NextLevel[index2].SetActive(true);
 		}
-		ChooseCharac();
+		
 		Function();
 	}
 
@@ -111,11 +117,6 @@ public class DesirabilityGauge : MonoBehaviour
 			RandomObj2();
 		}
 		else if (nowvalue >= 100)
-		{
-			Debug.Log("Ending");
-			Ending();
-		}
-		else if (nowvalue >= 20)
 		{
 			Debug.Log("Ending");
 			Ending();

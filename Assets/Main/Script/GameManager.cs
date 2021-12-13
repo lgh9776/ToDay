@@ -23,14 +23,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ClearToDoList()
-    {
-        if (interactnum == 0 && maininteract == 0)
-        {
-            sleepbtn.interactable = true;
-        }
-    }
-
     public void MainInteractSet()
     {
         if (maininteract == 1)

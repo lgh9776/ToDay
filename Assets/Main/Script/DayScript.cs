@@ -11,16 +11,10 @@ public class DayScript : MonoBehaviour
     public GameManager gameManager;
 
 
-    void Update()
-    {
-        gameManager.ClearToDoList();
-    }
-
     public void OnClickSleep()
     {
         day += 1;  // 날짜 더하기
         date.text = "D+" + day;
-        sleepbtn.interactable = false;
         gameManager.interactnum = 3;
         gameManager.maininteract = 1;
     }
