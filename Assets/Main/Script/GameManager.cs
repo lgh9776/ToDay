@@ -23,11 +23,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void ClearToDoList()
     {
         if (interactnum == 0 && maininteract == 0)

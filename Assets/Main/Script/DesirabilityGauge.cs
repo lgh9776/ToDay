@@ -9,10 +9,17 @@ public class DesirabilityGauge : MonoBehaviour
 	public Slider slider;
 	public GameObject[] NextLevel = new GameObject[7];
 	public GameObject Endingbtn;
+	public GameObject[] EndingCharac = new GameObject[12];
+	public Text endingtext;
+	public MBTIGauage mbtiGauage;
 
 	public static int index0 = 3;
-	private int index1 = 0;
-	private int index2 = 0;
+	private static int index1 = 0;
+	private static int index2 = 0;
+	string a = "E";
+	string b = "E";
+	string c = "E";
+	string d = "E";
 
 	public static int score = 0;
 	private int nowvalue = 0;
@@ -23,7 +30,11 @@ public class DesirabilityGauge : MonoBehaviour
 		{
 			NextLevel[i].SetActive(false);
 		}
-		
+		for (int i = 0; i < EndingCharac.Length; i++)
+		{
+			EndingCharac[i].SetActive(false);
+		}
+
 		if (index0 == 3)
         {
 			index0 = Random.Range(0, 3);
@@ -92,10 +103,6 @@ public class DesirabilityGauge : MonoBehaviour
 			Debug.Log("Ending");
 			Ending();
 		}
-		/*else if (nowvalue >= 5)
-        {
-			Ending();
-		}*/
 	}
 
 	public void OnClickInterac5()
@@ -124,8 +131,98 @@ public class DesirabilityGauge : MonoBehaviour
 		NextLevel[index1].SetActive(false);
 		NextLevel[index2].SetActive(true);
 	}
-	private void Ending()
+	public void Ending()
 	{
 		Endingbtn.SetActive(true);
+	}
+
+	public void EndingShow()
+    {
+		// 펫의 최종모습이 무엇인지
+		if (index2 == 9)
+        {
+			EndingCharac[0].SetActive(true);
+		}
+		else if (index2 == 10)
+		{
+			EndingCharac[1].SetActive(true);
+		}
+		else if (index2 == 11)
+		{
+			EndingCharac[2].SetActive(true);
+		}
+		else if (index2 == 12)
+		{
+			EndingCharac[3].SetActive(true);
+		}
+		else if (index2 == 13)
+		{
+			EndingCharac[4].SetActive(true);
+		}
+		else if (index2 == 14)
+		{
+			EndingCharac[5].SetActive(true);
+		}
+		else if (index2 == 15)
+		{
+			EndingCharac[6].SetActive(true);
+		}
+		else if (index2 == 16)
+		{
+			EndingCharac[7].SetActive(true);
+		}
+		else if (index2 == 17)
+		{
+			EndingCharac[8].SetActive(true);
+		}
+		else if (index2 == 18)
+		{
+			EndingCharac[9].SetActive(true);
+		}
+		else if (index2 == 19)
+		{
+			EndingCharac[10].SetActive(true);
+		}
+		else if (index2 == 20)
+		{
+			EndingCharac[11].SetActive(true);
+		}
+
+		// 펫의 mbti가 뭔지
+		if (mbtiGauage.Mbti[0] > mbtiGauage.Mbti[1])
+        {
+			a = "E";
+		}
+		else
+        {
+			a = "I";
+		}
+		if (mbtiGauage.Mbti[2] > mbtiGauage.Mbti[3])
+        {
+			b = "S";
+		}
+		else
+        {
+			b = "N";
+		}
+		if (mbtiGauage.Mbti[4] > mbtiGauage.Mbti[5])
+        {
+			c = "T";
+		}
+		else
+        {
+			c = "F";
+		}
+		if (mbtiGauage.Mbti[6] > mbtiGauage.Mbti[7])
+        {
+			d = "J";
+		}
+		else
+        {
+			d = "P";
+		}
+
+		// 최종 문구
+		endingtext.text = a + b + c + d;
 	}
 }
