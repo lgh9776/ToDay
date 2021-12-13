@@ -5,27 +5,27 @@ using UnityEngine.UI;
 
 public class MBTIGauage : MonoBehaviour
 {
-    public Slider Eslider;
-    public Slider Islider;
-    public Slider Sslider;
-    public Slider Nslider;
-    public Slider Tslider;
-    public Slider Fslider;
-    public Slider Jslider;
-    public Slider Pslider;
+    public Text Etext;
+    public Text Itext;
+    public Text Stext;
+    public Text Ntext;
+    public Text Ttext;
+    public Text Ftext;
+    public Text Jtext;
+    public Text Ptext;
     public int[] Mbti = new int[8];  // E, I, S, N, T, F, J, P
     public Text petname;
 
     void Update()
     {
-        Eslider.value = Mbti[0];
-        Islider.value = Mbti[1];
-        Sslider.value = Mbti[2];
-        Nslider.value = Mbti[3];
-        Tslider.value = Mbti[4];
-        Fslider.value = Mbti[5];
-        Jslider.value = Mbti[6];
-        Pslider.value = Mbti[7];
+        Etext.text = Mbti[0].ToString();
+        Itext.text = Mbti[1].ToString();
+        Stext.text = Mbti[2].ToString();
+        Ntext.text = Mbti[3].ToString();
+        Ttext.text = Mbti[4].ToString();
+        Ftext.text = Mbti[5].ToString();
+        Jtext.text = Mbti[6].ToString();
+        Ptext.text = Mbti[7].ToString();
         MBTINaming();
     }
 

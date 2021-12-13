@@ -7,17 +7,17 @@ public class DayScript : MonoBehaviour
 {
     public Text date;
     public Button sleepbtn;
-    private int day = 0;
-    public static int MapConversation = 3;
-    public int Interact = 1;
+    private int day = 1;
+    public GameManager gameManager;
 
     void Start()
     {
         sleepbtn.interactable = false;
+        date.text = "D+" + day;
     }
     void Update()
     {
-        ToDoList();
+        gameManager.ClearToDoList();
     }
 
     public void OnClickSleep()
@@ -25,21 +25,7 @@ public class DayScript : MonoBehaviour
         day += 1;  // 날짜 더하기
         date.text = "D+" + day;
         sleepbtn.interactable = false;
-        MapConversation = 3;
-        Interact = 1;
-    }
-
-    public void ToDoList()
-    {
-        if (MapConversation == 0 && Interact == 0)
-        {
-            sleepbtn.interactable = true;
-        }
-    }
-
-    public void OnClickInteract()
-    {
-        Interact -= 1;
-        ToDoList();
+        gameManager.interactnum = 3;
+        gameManager.maininteract = 1;
     }
 }

@@ -14,8 +14,8 @@ public class DesirabilityGauge : MonoBehaviour
 	private int index1 = 0;
 	private int index2 = 0;
 
-	public static int score = 0; // �þ�� ��
-	private int nowvalue = 0; // ���� ������ ��ġ
+	public static int score = 0;
+	private int nowvalue = 0;
 
 	void Start()
     {
@@ -74,25 +74,22 @@ public class DesirabilityGauge : MonoBehaviour
 	private void Function()
 	{
 		nowvalue += score;
-		// �����̴� �����̱�
 		slider.value = nowvalue;
-		// �� ����ϱ�
-		Debug.Log("���� ������:" + nowvalue);
-		message.text = nowvalue.ToString();  // �����̴� �� ���
+		message.text = nowvalue.ToString();  // show now score
 
 		if (nowvalue >= 30 && nowvalue < 70)
         {
-			Debug.Log("1�ܰ�� ����");
+			Debug.Log("1 Level up");
 			RandomObj1();
 		}
 		else if (nowvalue >= 70 && nowvalue < 100)
 		{
-			Debug.Log("2�ܰ�� ����");
+			Debug.Log("2 Level up");
 			RandomObj2();
 		}
 		else if (nowvalue >= 100)
 		{
-			Debug.Log("����");
+			Debug.Log("Ending");
 			Ending();
 		}
 		/*else if (nowvalue >= 5)
@@ -103,20 +100,17 @@ public class DesirabilityGauge : MonoBehaviour
 
 	public void OnClickInterac5()
 	{
-		score = 5;  // ���ͷ��� ���� Ŭ���ϸ� 5�� ���ϱ�
-		Debug.Log("5��ŭ �������� �����.");
+		score = 5;
 		Function();
 	}
 	public void OnClickInterac10()
 	{
-		score = 10;  // ���ͷ��� ���� Ŭ���ϸ� 10�� ���ϱ�
-		Debug.Log("10��ŭ �������� �����.");
+		score = 10;
 		Function();
 	}
 	public void OnClickInterac15()
 	{
-		score = 15;  // ���ͷ��� ���� Ŭ���ϸ� 15�� ���ϱ�
-		Debug.Log("15��ŭ �������� �����.");
+		score = 15;
 		Function();
 	}
 
