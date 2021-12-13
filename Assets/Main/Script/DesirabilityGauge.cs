@@ -77,7 +77,9 @@ public class DesirabilityGauge : MonoBehaviour
 				index2 = Random.Range(19, 21);
 			}
 		}
-
+		Debug.Log(index0);
+		Debug.Log(index1);
+		Debug.Log(index2);
 
 		Function();
 	}
@@ -99,6 +101,11 @@ public class DesirabilityGauge : MonoBehaviour
 			RandomObj2();
 		}
 		else if (nowvalue >= 100)
+		{
+			Debug.Log("Ending");
+			Ending();
+		}
+		else if (nowvalue >= 20)
 		{
 			Debug.Log("Ending");
 			Ending();

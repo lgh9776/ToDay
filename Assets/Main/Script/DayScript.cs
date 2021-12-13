@@ -7,14 +7,10 @@ public class DayScript : MonoBehaviour
 {
     public Text date;
     public Button sleepbtn;
-    private int day = 1;
+    private int day = 0;
     public GameManager gameManager;
 
-    void Start()
-    {
-        sleepbtn.interactable = false;
-        date.text = "D+" + day;
-    }
+
     void Update()
     {
         gameManager.ClearToDoList();
@@ -27,5 +23,16 @@ public class DayScript : MonoBehaviour
         sleepbtn.interactable = false;
         gameManager.interactnum = 3;
         gameManager.maininteract = 1;
+    }
+
+    public void OnClickStart()
+    {
+        OnClickSleep();
+    }
+
+    public void Start()
+    {
+        day = 0;
+        OnClickSleep();
     }
 }

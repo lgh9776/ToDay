@@ -12386,6 +12386,22 @@ PrefabInstance:
       propertyPath: petname
       value: 
       objectReference: {fileID: 1118550338}
+    - target: {fileID: 5528244399591211827, guid: 16224932efa90e74e9bc7a1f2e6654fd, type: 3}
+      propertyPath: Mbti.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5528244399591211827, guid: 16224932efa90e74e9bc7a1f2e6654fd, type: 3}
+      propertyPath: Mbti.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5528244399591211827, guid: 16224932efa90e74e9bc7a1f2e6654fd, type: 3}
+      propertyPath: Mbti.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5528244399591211827, guid: 16224932efa90e74e9bc7a1f2e6654fd, type: 3}
+      propertyPath: Mbti.Array.data[6]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5528244399591211828, guid: 16224932efa90e74e9bc7a1f2e6654fd, type: 3}
       propertyPath: date
       value: 

@@ -13,7 +13,7 @@ public class MBTIGauage : MonoBehaviour
     public Text Ftext;
     public Text Jtext;
     public Text Ptext;
-    public int[] Mbti = new int[8];  // E, I, S, N, T, F, J, P
+    public int[] Mbti = new int [8];  // E, I, S, N, T, F, J, P
     public Text petname;
 
     void Update()
