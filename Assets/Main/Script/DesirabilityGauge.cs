@@ -13,9 +13,9 @@ public class DesirabilityGauge : MonoBehaviour
 	public Text endingtext;
 	public MBTIGauage mbtiGauage;
 
-	public static int index0 = 3;
-	private static int index1 = 0;
-	private static int index2 = 0;
+	public int index0 = 3;
+	public int index1 = 0;
+	public int index2 = 0;
 	string a = "E";
 	string b = "E";
 	string c = "E";
@@ -35,17 +35,32 @@ public class DesirabilityGauge : MonoBehaviour
 			EndingCharac[i].SetActive(false);
 		}
 
-		if (index0 == 3)
-        {
-			index0 = Random.Range(0, 3);
+		if (nowvalue < 30)
+		{
+			NextLevel[index0].SetActive(true);
 		}
-		NextLevel[index0].SetActive(true);
+		else if (nowvalue >= 30 && nowvalue < 70)
+		{
+			NextLevel[index1].SetActive(true);
+		}
+		else if (nowvalue >= 70 && nowvalue < 100)
+		{
+			NextLevel[index2].SetActive(true);
+		}
 
+		Function();
+	}
+
+	public void ChooseCharac()
+    {
+		// 캐릭터 선택
+		index0 = Random.Range(0, 3);
 		if (index0 == 0)
 		{
 			index1 = Random.Range(3, 5);
+
 			if (index1 == 3)
-            {
+			{
 				index2 = Random.Range(9, 11);
 			}
 			else if (index1 == 4)
@@ -77,13 +92,8 @@ public class DesirabilityGauge : MonoBehaviour
 				index2 = Random.Range(19, 21);
 			}
 		}
-		Debug.Log(index0);
-		Debug.Log(index1);
-		Debug.Log(index2);
-
-		Function();
 	}
- 
+
 	private void Function()
 	{
 		nowvalue += score;

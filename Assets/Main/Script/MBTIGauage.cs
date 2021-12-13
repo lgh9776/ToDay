@@ -16,6 +16,8 @@ public class MBTIGauage : MonoBehaviour
     public int[] Mbti = new int [8];  // E, I, S, N, T, F, J, P
     public Text petname;
 
+    public DesirabilityGauge characterchoose;
+
     void Update()
     {
         Etext.text = Mbti[0].ToString();
@@ -32,7 +34,7 @@ public class MBTIGauage : MonoBehaviour
     public void MBTINaming()
     {
         //C
-        if (DesirabilityGauge.index0 == 0)
+        if (characterchoose.index0 == 0)
         {
             if (Mbti[0] > Mbti[1])  //E
             {
@@ -203,7 +205,7 @@ public class MBTIGauage : MonoBehaviour
         }
 
         //T
-        else if (DesirabilityGauge.index0 == 2)
+        else if (characterchoose.index0 == 2)
         {
             if (Mbti[0] > Mbti[1])  //E
             {
