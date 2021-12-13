@@ -47,7 +47,7 @@ public class DesirabilityGauge : MonoBehaviour
 		{
 			NextLevel[index2].SetActive(true);
 		}
-
+		ChooseCharac();
 		Function();
 	}
 
