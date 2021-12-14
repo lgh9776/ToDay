@@ -117,11 +117,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        /*Debug.Log("리스트 출력");
+        Debug.Log("리스트 출력");
         for (int i = 0; i < InteractList.Count; i++)
         {
             Debug.Log(InteractList[i]);
-        }*/
+        }
     }
 
     // 해당 인터렉 숨기기
