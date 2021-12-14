@@ -26,7 +26,6 @@ public class DayScript : MonoBehaviour
 
     public void Start()
     {
-        day = 0;
         OnClickSleep();
     }
 }

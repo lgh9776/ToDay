@@ -64,6 +64,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MapScene");
     }
 
+    public void AfterEnding()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
+
     public void ChooseInteract()
     {
         mainInteractrandomnumber = Random.Range(0, 9);

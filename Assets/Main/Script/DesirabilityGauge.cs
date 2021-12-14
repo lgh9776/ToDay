@@ -13,7 +13,7 @@ public class DesirabilityGauge : MonoBehaviour
 	public Text endingtext;
 	public MBTIGauage mbtiGauage;
 
-	public int index0 = 3;
+	public int index0 = 0;
 	public int index1 = 0;
 	public int index2 = 0;
 	string a = "E";
@@ -35,11 +35,7 @@ public class DesirabilityGauge : MonoBehaviour
 			EndingCharac[i].SetActive(false);
 		}
 
-		// ChooseCharac();
-
-		index0 = 1;
-		index1 = 5;
-		index2 = 13;
+		ChooseCharac();
 
 		if (nowvalue < 30)
 		{
