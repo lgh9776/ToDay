@@ -10,7 +10,6 @@ public class DesirabilityGauge : MonoBehaviour
 	public GameObject[] NextLevel = new GameObject[21];
 	public GameObject Endingbtn;
 	public GameObject[] EndingCharac = new GameObject[12];
-	public MBTIGauage mbtiGauage;
 	public CharacterManager charactermanager;
 
 	public static int score = 0;
@@ -143,5 +142,5 @@ public class DesirabilityGauge : MonoBehaviour
     {
 		score = 0;
 		nowvalue = 0;
-}
+	}
 }

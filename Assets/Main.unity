@@ -3616,6 +3616,7 @@ MonoBehaviour:
   index0: 0
   index1: 0
   index2: 0
+  mbtiGauage: {fileID: 247431994}
 --- !u!4 &576895342
 Transform:
   m_ObjectHideFlags: 0

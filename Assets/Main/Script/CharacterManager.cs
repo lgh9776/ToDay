@@ -8,7 +8,7 @@ public class CharacterManager : MonoBehaviour
 	public int index1 = 0;
 	public int index2 = 0;
 
-	private int index = 0; // 0
+	private int index; // 0
 	private int indexc; // 1
 	private int indexs;
 	private int indext;
@@ -18,7 +18,9 @@ public class CharacterManager : MonoBehaviour
 	private int indexs6;
 	private int indext7;
 	private int indext8;
-	
+
+	public MBTIGauage mbtiGauage;
+
 	public void Awake()
     {
 		//Debug.Log(index1);
@@ -32,7 +34,6 @@ public class CharacterManager : MonoBehaviour
 		indexs6 = Random.Range(15, 17);
 		indext7 = Random.Range(17, 19);
 		indext8 = Random.Range(19, 21);
-	
 	}
 	
 	public void Start()
@@ -125,7 +126,8 @@ public class CharacterManager : MonoBehaviour
 			}
 		}
 
-		// Debug.Log("index0 : " + index0 + "   index1 : " + index1 + "   index2 : " + index2);
+		Debug.Log("index0 : " + index0 + "   index1 : " + index1 + "   index2 : " + index2);
+		mbtiGauage.MBTINaming();
 	}
 
 	public void AfterEnding()
