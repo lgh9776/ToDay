@@ -138,4 +138,10 @@ public class DesirabilityGauge : MonoBehaviour
 			EndingCharac[11].SetActive(true);
 		}
 	}
+
+	public void AfterEnding()
+    {
+		score = 0;
+		nowvalue = 0;
+}
 }

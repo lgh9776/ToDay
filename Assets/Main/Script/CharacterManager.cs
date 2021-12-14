@@ -18,8 +18,6 @@ public class CharacterManager : MonoBehaviour
 	private int indexs6;
 	private int indext7;
 	private int indext8;
-
-	//public DesirabilityGauge desirabilitygauge;
 	
 	public void Awake()
     {
@@ -39,19 +37,6 @@ public class CharacterManager : MonoBehaviour
 	
 	public void Start()
 	{
-		/*
-		index = Random.Range(0, 3); // 0
-		indexc = Random.Range(3, 5); // 1
-		indexs = Random.Range(5, 7);
-		indext = Random.Range(7, 9);
-		indexc3 = Random.Range(9, 11); // 2
-		indexc4 = Random.Range(11, 13);
-		indexs5 = Random.Range(13, 15);
-		indexs6 = Random.Range(15, 17);
-		indext7 = Random.Range(17, 19);
-		indext8 = Random.Range(19, 21);
-		*/
-
 		if (index == 0)
 		{
 			index0 = 0;
@@ -140,10 +125,7 @@ public class CharacterManager : MonoBehaviour
 			}
 		}
 
-		Debug.Log("index0 : " + index0 + "   index1 : " + index1 + "   index2 : " + index2);
-		//desirabilitygauge.ShowCharacter();
-		//desirabilitygauge.AfterLevelUp();
-		//gameObject.SetActive(false);
+		// Debug.Log("index0 : " + index0 + "   index1 : " + index1 + "   index2 : " + index2);
 	}
 
 	public void AfterEnding()

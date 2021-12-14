@@ -597,4 +597,9 @@ public class MBTIGauage : MonoBehaviour
         // 최종 문구
         endingtext.text = a + b + c + d;
     }
+
+    public void AfterEnding()
+    {
+        Start();
+    }
 }
