@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] InteractList = new GameObject[9];
+    List<int> InteractList = new List<int>();
+    public GameObject Interacta;
+    public GameObject Interactb;
+    public GameObject Interactc;
     public Button sleepbtn;
     public GameObject MainInteractbtn;
     public SoundManager soundManager;
@@ -17,10 +20,12 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        for (int i = 0; i < InteractList.Length; i++)
-        {
-            InteractList[i].SetActive(false);
-        }
+        Interacta.SetActive(false);
+        Interactb.SetActive(false);
+        Interactc.SetActive(false);
+        InteractList.Add(0);
+        InteractList.Add(1);
+        InteractList.Add(2);
     }
 
     public void MainInteractSet()
@@ -39,6 +44,7 @@ public class GameManager : MonoBehaviour
     {
         maininteract--;
         Debug.Log(maininteract);
+        ChooseInteract();
     }
 
     public void OnClickbtnMute()
@@ -71,8 +77,45 @@ public class GameManager : MonoBehaviour
 
     public void ChooseInteract()
     {
-        mainInteractrandomnumber = Random.Range(0, 9);
-        InteractList[mainInteractrandomnumber].SetActive(true);
-        Debug.Log(mainInteractrandomnumber);
+        Debug.Log("리스트 출력");
+        for (int i = 0; i < InteractList.Count; i++)
+        {
+            Debug.Log(InteractList[i]);
+        }
+
+        if (InteractList[0] == -1)
+        {
+            if (InteractList[1] == -1)
+            {
+                if (InteractList[2] == -1)
+                {
+                    InteractList[0] = 0;
+                    InteractList[1] = 1;
+                    InteractList[2] = 2;
+                }
+            }
+        }
+
+        mainInteractrandomnumber = Random.Range(0, 3);
+        if (InteractList[mainInteractrandomnumber] == 0)
+        {
+            Interacta.SetActive(true);
+            InteractList[0] = -1;
+        }
+        else if (InteractList[mainInteractrandomnumber] == 1)
+        {
+            Interactb.SetActive(true);
+            InteractList[1] = -1;
+        }
+        else if (InteractList[mainInteractrandomnumber] == 2)
+        {
+            Interactc.SetActive(true);
+            InteractList[2] = -1;
+        }
+        Debug.Log("리스트 출력");
+        for (int i = 0; i < InteractList.Count; i++)
+        {
+            Debug.Log(InteractList[i]);
+        }
     }
 }
