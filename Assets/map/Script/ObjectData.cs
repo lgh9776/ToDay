@@ -12,7 +12,7 @@ public class ObjectData : MonoBehaviour
         int n;
         
         if(id != 9000){
-            n = Random.Range(1, 13);
+            n = Random.Range(1, 12);
             textNum = 10;
             textNum *= n;
         }

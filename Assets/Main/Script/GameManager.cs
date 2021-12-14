@@ -55,7 +55,8 @@ public class GameManager : MonoBehaviour
 
     public void GameExit()
     {
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene("StartScene");
     }
 
     public void SceneChange()
