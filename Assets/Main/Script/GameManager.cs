@@ -12,20 +12,30 @@ public class GameManager : MonoBehaviour
     public GameObject Interactc;
     public Button sleepbtn;
     public GameObject MainInteractbtn;
-    public SoundManager soundManager;
 
     public int interactnum = 3;
-    public int maininteract = 1;
+    private static int maininteract = 1;
     public int mainInteractrandomnumber = 0;
+
+    public CharacterManager charactermanager;
 
     public void Start()
     {
-        Interacta.SetActive(false);
-        Interactb.SetActive(false);
-        Interactc.SetActive(false);
+        InteractaFalse();
+        InteractbFalse();
+        InteractcFalse();
+        MainInteractSet();
+
         InteractList.Add(0);
         InteractList.Add(1);
         InteractList.Add(2);
+    }
+
+    public void OnClickSleep()
+    {
+        interactnum = 3;
+        maininteract = 1;
+        MainInteractSet();
     }
 
     public void MainInteractSet()
@@ -40,48 +50,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // 인터렉 버튼 누르면 인터렉 횟수 -1
     public void OnClickInteract()
     {
         maininteract--;
-        Debug.Log(maininteract);
         ChooseInteract();
     }
 
-    public void OnClickbtnMute()
-    {
-        if (soundManager.bgmPlayer.mute == false)
-        {
-            soundManager.bgmPlayer.mute = true;
-        }
-        else
-        {
-            soundManager.bgmPlayer.mute = false;
-        }
-    }
-
-    public void GameExit()
-    {
-        //Application.Quit();
-        SceneManager.LoadScene("StartScene");
-    }
-
+    // 지도 버튼 누르면 지도씬으로
     public void SceneChange()
     {
         SceneManager.LoadScene("MapScene");
     }
 
+    // 엔딩 후에 인트로로
     public void AfterEnding()
     {
+        interactnum = 3;
+        maininteract = 1;
         SceneManager.LoadScene("StartScene");
     }
 
+    // 인터렉 리스트에서 1개 고르고 보이기, 해당 리스트 -1로
+    // 전부 -1이면 처음으로 리셋
     public void ChooseInteract()
     {
-        Debug.Log("리스트 출력");
+        /*Debug.Log("리스트 출력");
         for (int i = 0; i < InteractList.Count; i++)
         {
             Debug.Log(InteractList[i]);
-        }
+        }*/
 
         if (InteractList[0] == -1)
         {
@@ -96,26 +94,47 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        mainInteractrandomnumber = Random.Range(0, 3);
-        if (InteractList[mainInteractrandomnumber] == 0)
+        while (true)
         {
-            Interacta.SetActive(true);
-            InteractList[0] = -1;
+            mainInteractrandomnumber = Random.Range(0, 3);
+            if (InteractList[mainInteractrandomnumber] == 0)
+            {
+                Interacta.SetActive(true);
+                InteractList[0] = -1;
+                break;
+            }
+            else if (InteractList[mainInteractrandomnumber] == 1)
+            {
+                Interactb.SetActive(true);
+                InteractList[1] = -1;
+                break;
+            }
+            else if (InteractList[mainInteractrandomnumber] == 2)
+            {
+                Interactc.SetActive(true);
+                InteractList[2] = -1;
+                break;
+            }
         }
-        else if (InteractList[mainInteractrandomnumber] == 1)
-        {
-            Interactb.SetActive(true);
-            InteractList[1] = -1;
-        }
-        else if (InteractList[mainInteractrandomnumber] == 2)
-        {
-            Interactc.SetActive(true);
-            InteractList[2] = -1;
-        }
-        Debug.Log("리스트 출력");
+
+        /*Debug.Log("리스트 출력");
         for (int i = 0; i < InteractList.Count; i++)
         {
             Debug.Log(InteractList[i]);
-        }
+        }*/
+    }
+
+    // 해당 인터렉 숨기기
+    public void InteractaFalse()
+    {
+        Interacta.SetActive(false);
+    }
+    public void InteractbFalse()
+    {
+        Interactb.SetActive(false);
+    }
+    public void InteractcFalse()
+    {
+        Interactc.SetActive(false);
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5528244399591211830}
   - component: {fileID: 5528244399591211831}
   - component: {fileID: 5528244399591211829}
-  - component: {fileID: 5528244399591211828}
   - component: {fileID: 5528244399591211827}
   - component: {fileID: 5528244399591211826}
   - component: {fileID: 5528244399591211825}
@@ -48,16 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a3e5d8dd5ef1342a5ab1fdce5bfb80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  Interacta: {fileID: 0}
+  Interactb: {fileID: 0}
+  Interactc: {fileID: 0}
   sleepbtn: {fileID: 0}
   MainInteractbtn: {fileID: 0}
   soundManager: {fileID: 0}
@@ -119,21 +111,6 @@ MonoBehaviour:
   index0: 3
   index1: 0
   index2: 0
---- !u!114 &5528244399591211828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5528244399591211832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926f987ebfd1c164bb80f0c8876e1083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  date: {fileID: 0}
-  sleepbtn: {fileID: 0}
-  gameManager: {fileID: 0}
 --- !u!114 &5528244399591211827
 MonoBehaviour:
   m_ObjectHideFlags: 0

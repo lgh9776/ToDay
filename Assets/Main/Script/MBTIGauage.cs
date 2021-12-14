@@ -15,10 +15,16 @@ public class MBTIGauage : MonoBehaviour
     public Text Ptext;
     public int[] Mbti = new int [8];  // E, I, S, N, T, F, J, P
     public Text petname;
+    public Text endingtext;
 
-    public DesirabilityGauge characterchoose;
+    string a = "E";
+    string b = "E";
+    string c = "E";
+    string d = "E";
 
-    void Update()
+    public CharacterManager characterchoose;
+
+    void Start()
     {
         Etext.text = Mbti[0].ToString();
         Itext.text = Mbti[1].ToString();
@@ -29,6 +35,11 @@ public class MBTIGauage : MonoBehaviour
         Jtext.text = Mbti[6].ToString();
         Ptext.text = Mbti[7].ToString();
         MBTINaming();
+        /*Debug.Log("Mbti");
+        for (int i = 0; i < Mbti.Length; i++)
+        {
+            Debug.Log(Mbti[i]);
+        }*/
     }
 
     public void MBTINaming()
@@ -545,5 +556,45 @@ public class MBTIGauage : MonoBehaviour
                 petname.text = "<네모미>";
             }
         }
+    }
+
+    // 펫의 최종 mbti 출력
+    public void EndingShow()
+    {
+        if (Mbti[0] > Mbti[1])
+        {
+            a = "E";
+        }
+        else
+        {
+            a = "I";
+        }
+        if (Mbti[2] > Mbti[3])
+        {
+            b = "S";
+        }
+        else
+        {
+            b = "N";
+        }
+        if (Mbti[4] > Mbti[5])
+        {
+            c = "T";
+        }
+        else
+        {
+            c = "F";
+        }
+        if (Mbti[6] > Mbti[7])
+        {
+            d = "J";
+        }
+        else
+        {
+            d = "P";
+        }
+
+        // 최종 문구
+        endingtext.text = a + b + c + d;
     }
 }
