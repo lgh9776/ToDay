@@ -7,6 +7,7 @@ public class ObjectData : MonoBehaviour
     public int id;
     public int textNum;
 
+    //중복된 상황이 나오지 않도록 수정
     void Awake()
     {
         int n;

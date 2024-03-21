@@ -14,13 +14,14 @@ public class ScoreManager : MonoBehaviour
         GenerateData();
     }
 
+    //GameManager에 있는 mbtiGauage 수치가 홈과 맵을 이동할 때 유지되도록
     public void ChoiceScore(int id)
     {
         for(int i = 0; i < 8; i++){
             mbtiGauage.Mbti[i] += score[id][i];
             //메인화면 mbti점수 int형 배열[i] += score[id][i];
         }
-        gameManager.interactnum--;
+        gameManager.interactnum--; //남은 상호작용 횟수
     }
 
     void GenerateData()
