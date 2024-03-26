@@ -18,19 +18,22 @@ public class TextManager : MonoBehaviour
     public bool isAction;
     public int talkIndex;
 
+    //스캔된 장소에 맞는 상호작용 화면 호출
     public void Action(GameObject scanObj)
     {
         scanObject = scanObj;
         ObjectData objData = scanObject.GetComponent<ObjectData>();
 
-        if(objData.id == 9000 && objData.textNum == 10){
+        //홈 화면으로 이동하는 부분 -> 
+        if(objData.id == 9000 && objData.textNum == 10){ //textnum이 10일 경우 홈 클릭한 것
             SceneManager.LoadScene("Main");
         }
-        Talk(objData.id, objData.textNum, scanObject);
+        Talk(objData.id, objData.textNum, scanObject); //20일 경우 다른 장소 클릭 (상호작용 횟수 = 0)
 
         talkPanel.SetActive(isAction);
     }
 
+    //실제 상호작용 화면을 생성하는 부분
     void Talk(int id, int textSetIndex, GameObject scanObj)
     {
         string talkData = talkManager.GetTalk(id + textSetIndex, talkIndex);

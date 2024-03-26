@@ -1,28 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
-public class ScoreManager : MonoBehaviour
+    public class ScoreManager : MonoBehaviour
 {
     Dictionary<int, int[]> score;
     public MBTIGauage mbtiGauage;
     public GameManager gameManager;
 
+    string path;
+    string filenamae = "save";
+
     void Awake()
     {
+        path = Application.persistentDataPath + "/";
+
         score = new Dictionary<int, int[]>();
         GenerateData();
     }
 
-    //GameManager에 있는 mbtiGauage 수치가 홈과 맵을 이동할 때 유지되도록
+    //수치 변화 시 지도의 캐릭터 데이터 저장 -> 홈과 맵을 이동할 때 유지되도록
     public void ChoiceScore(int id)
     {
         for(int i = 0; i < 8; i++){
             mbtiGauage.Mbti[i] += score[id][i];
             //메인화면 mbti점수 int형 배열[i] += score[id][i];
         }
-        gameManager.interactnum--; //남은 상호작용 횟수
+        gameManager.interactnum--;
+        //SaveData();
     }
+
+    /* 캐릭터 데이터 수치 class로 뽑기
+    public void SaveData()
+    {
+        string data = JsonUtility.ToJson(mbtiGauage.Mbti[0]);
+        File.WriteAllText(path + filenamae, data);
+    }
+
+    public void LoadData()
+    {
+        string data = File.ReadAllText(path + filenamae);
+        playerData = JsonUtility.FromJson<PlayerData>(data);
+    }
+    */
 
     void GenerateData()
     {
