@@ -10,7 +10,7 @@ using System.IO;
     public GameManager gameManager;
 
     string path;
-    string filenamae = "save";
+    //string filenamae = "save";
 
     void Awake()
     {
