@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//add animator condition
 public class CharacterManager : MonoBehaviour
 {
     public GameObject character;
