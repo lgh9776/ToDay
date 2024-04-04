@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class CharacterData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    int shape; //캐릭터 모양 ID
+    int love; //애정도
+    public int interactNum;
+    public int[] MBTI = new int[8]; //E I S N T F J P
+
+    private void Awake()
     {
-        
+        SetCharacterShapeID();
+        InitInteractNum();
     }
 
-    // Update is called once per frame
-    void Update()
+    //게임 시작 시 캐릭터 모양 랜덤 지정
+    void SetCharacterShapeID()
     {
-        
+        shape = Random.Range(0, 3);
+    }
+
+    public int GetCharacterShapeID()
+    {
+        return shape;
+    }
+
+    void InitInteractNum()
+    {
+        interactNum = 3;
     }
 }

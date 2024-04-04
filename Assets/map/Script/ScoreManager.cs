@@ -6,8 +6,9 @@ using System.IO;
     public class ScoreManager : MonoBehaviour
 {
     Dictionary<int, int[]> score;
-    public MBTIGauage mbtiGauage;
-    public GameManager gameManager;
+    //public MBTIGauage mbtiGauage;
+    //public GameManager gameManager;
+    public CharacterData characterData;
 
     string path;
     //string filenamae = "save";
@@ -24,10 +25,10 @@ using System.IO;
     public void ChoiceScore(int id)
     {
         for(int i = 0; i < 8; i++){
-            mbtiGauage.Mbti[i] += score[id][i];
+            characterData.MBTI[i] += score[id][i];
             //메인화면 mbti점수 int형 배열[i] += score[id][i];
         }
-        gameManager.interactnum--;
+        characterData.interactNum--;
         //SaveData();
     }
 

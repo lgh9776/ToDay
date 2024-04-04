@@ -12,7 +12,8 @@ public class PlayerAction : MonoBehaviour
     public float Speed;
     public TextManager manager;
     public ChoiceManager choiceManager;
-    public GameManager gameManager;
+    //public GameManager gameManager;
+    public CharacterData characterData;
     public GameObject home;
 
     Rigidbody2D rigid;
@@ -60,7 +61,7 @@ public class PlayerAction : MonoBehaviour
         //Scan_Ray
         //3회 횟수가 사라지면 인식 못하게 -> count  > 0 
         if(scanPlace != null) {
-            if(choiceManager.isAction != true && gameManager.interactnum > 0){
+            if(choiceManager.isAction != true && characterData.interactNum > 0){
                 if(Input.GetButtonDown("Jump") && scanPlace != null){
                     manager.Action(scanPlace);
                     GetComponent<AudioSource>().Play();
@@ -72,7 +73,7 @@ public class PlayerAction : MonoBehaviour
                 manager.Action(scanPlace);
                 GetComponent<AudioSource>().Play();
             }
-            else if (Input.GetButtonDown("Jump") && gameManager.interactnum <= 0 && scanPlace.name != "home"){ //상호작용 횟수가 0인데 홈이 외의 장소 클릭
+            else if (Input.GetButtonDown("Jump") && characterData.interactNum <= 0 && scanPlace.name != "home"){ //상호작용 횟수가 0인데 홈이 외의 장소 클릭
                 scanPlace = home; //상호작용 화면을 홈으로 구성하기 위해 설정
                 ObjectData objData = scanPlace.GetComponent<ObjectData>(); //어차피 scanPlace를 홈으로 고정할건데 필요 있음?
                 objData.textNum = 20; //-> TextManager의 Action에서 textNum으로 홈의 결과 달라짐
