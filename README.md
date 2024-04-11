@@ -45,3 +45,6 @@ Build Settings : Android
 
 <240401>
 - new/map > 캐릭터 테스트 배치 //새로운 브랜치 만들어서 캐릭터 이벤트 작업
+
+<240410 ~ >
+- 엔딩 조건 맞추기 테스트 후 Pull request
